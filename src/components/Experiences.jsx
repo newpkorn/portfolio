@@ -8,8 +8,8 @@ const Experinces = ({ darkMode }) => {
 
     return (
         <div className={`
-            pb-4
-            ${darkMode ? 'border-b border-neutral-800' : ''}
+            pb-9
+            ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}

@@ -16,8 +16,8 @@ const Certificates = ({ darkMode }) => {
 
         const scroll = () => {
             if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-                // carousel.scrollLeft = 0;
-                stopScroll()
+                carousel.scrollLeft = 0;
+                // stopScroll()
             } else {
                 carousel.scrollLeft += scrollSpeed;
             }
@@ -83,7 +83,7 @@ const Certificates = ({ darkMode }) => {
             overflow-hidden 
             py-12
             pb-24
-            ${darkMode ? 'border-b border-neutral-800' : ''}
+            ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ const Certificates = ({ darkMode }) => {
             </div>
 
             <div className="flex justify-end">
-                <a href={import.meta.env.VITE_MY_LEARNING_PATH} target='_blank' className=' hover:text-orange-400 hover:underline text-sm'>
+                <a href={import.meta.env.VITE_MY_LEARNING_PATH} target='_blank' className=' hover:text-orange-400 hover:underline text-neutral-400 text-sm'>
                     See more
                 </a>
             </div>

@@ -14,13 +14,13 @@ const Navbar = ({ darkMode }) => {
                 }
             </div>
             <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-                <a href="https://www.linkedin.com/in/pknpk/" target="_blank">
+                <a href={import.meta.env.VITE_LINKEDIN_URL} target="_blank">
                     <FaLinkedin />
                 </a>
-                <a href="https://github.com/newpkorn" target="_blank">
+                <a href={import.meta.env.VITE_GITHUB_URL} target="_blank">
                     <FaGithub />
                 </a>
-                <a href="https://www.instagram.com/pkn.npk/" target="_blank">
+                <a href={import.meta.env.VITE_INSTAGRAM_URL} target="_blank">
                     <FaInstagram />
                 </a>
             </div>

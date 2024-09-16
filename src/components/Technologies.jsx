@@ -25,7 +25,7 @@ const Technologies = ({ darkMode }) => {
     return (
         <div className={`
                 pb-24
-                ${darkMode ? 'border-b border-neutral-800' : ''}
+                ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}

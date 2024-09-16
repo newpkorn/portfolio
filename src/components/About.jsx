@@ -6,7 +6,7 @@ const About = ({ darkMode }) => {
     return (
         <div className={`
                 ps-4
-                ${darkMode ? 'border-b border-neutral-800' : ''}
+                ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
             <h2 className="my-20 text-center text-4xl">
                 About

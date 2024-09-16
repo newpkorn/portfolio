@@ -83,25 +83,25 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "To Do App Web",
+    title: "To Do App",
     image: ToDoApp,
     description:
       "A To-Do List Application built using Python Flask and SQLite allows users to manage tasks efficiently. The project involves creating a web app where users can add, edit, update, and delete task lists (cards) and items (checklist) within each card.",
     skills: ["HTML", "CSS", "Bootstrap", "Python", "Flask", "SQLite"],
   },
   {
-    title: "K Online Shop",
+    title: "K Online Store",
     image: KOnlineShop,
     description:
       "An application built with Node.js, EJS, and MongoDB. It features a CRUD system for managing both products and employees, allowing users to create, read, update, and delete entries for each.",
-    skills: ["HTML", "CSS","Bootstrap", "ejs", "NodeJs", "MongoDB"],
+    skills: ["HTML", "CSS","Bootstrap", "ejs", "NodeJs", "Express", "MongoDB"],
   },
   {
     title: "Portfolio Website",
     image: Portfolio,
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
-    skills: ["HTML", "CSS", "React", "Tailwind"],
+    skills: ["HTML", "CSS", "React", "Tailwind", "EmailJS"],
   },
 ];
 
@@ -184,7 +184,7 @@ export const CERTIFICATES = [
     tag: 'GitOps'
   },
   {
-    name: 'Introduction To DevOps And Site Reliability Engineering',
+    name: 'Introduction To DevOps and Site Reliability Engineering',
     author: 'Linux Foundation',
     year: 2024,
     image: IntroductionToDevOpsAndSiteReliabilityEngineering,
@@ -206,14 +206,14 @@ export const CERTIFICATES = [
   },
   {
     name: 'Introduction To Robot Framework',
-    author: 'Linux Foundation',
+    author: 'Test Automation University',
     year: 2023,
     image: IntroductionToRobotFramework,
     tag: 'Automate Testing'
   },
   {
     name: 'Setting A Foundation For Successful Test Automation',
-    author: 'Linux Foundation',
+    author: 'Test Automation University',
     year: 2023,
     image: SettingAFoundationForSuccessfulTestAutomation,
     tag: 'Automate Testing'
@@ -261,7 +261,7 @@ export const CERTIFICATES = [
     tag: 'DevOps'
   },
   {
-    name: 'Git and GitHubIntroduction',
+    name: 'Git and GitHub Introduction',
     author: 'Atos',
     year: 2021,
     image: Git_GitHub_Introduction,
