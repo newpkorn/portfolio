@@ -14,13 +14,13 @@ const container = (delay) => ({
     }
 });
 
-const Hero = () => {
+const Hero = ({ darkMode }) => {
     return (
-        <div className="
-            border-b 
-            border-neutral-900 
+        <div className={`
             pb-4 
-            lg:mb-35">
+            lg:mb-35
+            ${darkMode ? 'border-b border-neutral-800' : ''}
+        `}>
             <div className="flex flex-wrap">
                 <div className="w-full lg:w-1/2">
                     <div className="

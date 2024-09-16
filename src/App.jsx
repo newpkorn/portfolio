@@ -7,9 +7,10 @@ import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
 import Technologies from "./components/Technologies"
 import ContactForm from "./components/ContactForm"
+import Certificates from "./components/Certificates"
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   return (
     <>
@@ -66,11 +67,12 @@ const App = () => {
 
         <div className="container mx-auto px-8">
           <Navbar darkMode={darkMode} />
-          <Hero />
-          <About />
-          <Technologies />
+          <Hero darkMode={darkMode} />
+          <About darkMode={darkMode} />
+          <Technologies darkMode={darkMode} />
           <Experinces darkMode={darkMode} />
           <Projects darkMode={darkMode} />
+          <Certificates darkMode={darkMode} />
           <ContactForm darkMode={darkMode} />
         </div>
       </div>

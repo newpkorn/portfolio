@@ -7,7 +7,10 @@ const Experinces = ({ darkMode }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="border-b border-neutral-900 pb-4">
+        <div className={`
+            pb-4
+            ${darkMode ? 'border-b border-neutral-800' : ''}
+        `}>
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}

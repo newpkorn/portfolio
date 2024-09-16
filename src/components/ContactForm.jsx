@@ -57,7 +57,7 @@ const ContactForm = ({ darkMode }) => {
                 transition={{ duration: 0.5 }}
                 className="my-10 text-4xl text-center mb-6 pb-5"
             >
-                Contact Me
+                Get In Touch
             </motion.h2>
 
             {alert.message && (
@@ -222,41 +222,13 @@ const ContactForm = ({ darkMode }) => {
                         )
                         :
                         (
-                            /* From Uiverse.io by EcheverriaJesus */
                             <button
-                                type='submit'
-                                className="
-                                flex items-center
-                                bg-blue-500
-                                text-white 
-                                gap-1 
-                                px-4 
-                                py-2 
-                                cursor-pointer 
-                                text-white ß
-                                font-semibold 
-                                tracking-widest 
-                                rounded-md 
-                                hover:bg-blue-400 
-                                duration-300 hover:gap-2 
-                                hover:translate-x-3"
+                                className="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#7747FF] hover:bg-white hover:text-[#7747FF] focus:text-[#7747FF] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200"
                             >
-                                Send
-                                <svg
-                                    className="w-5 h-5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                                        strokeLinejoin="round"
-                                        strokeLinecap="round"
-                                    ></path>
-                                </svg>
+                                Submit
                             </button>
+
+
 
                         )
                     }
