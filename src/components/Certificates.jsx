@@ -78,100 +78,93 @@ const Certificates = ({ darkMode }) => {
     };
 
     return (
-        <div
-            id='certificates'
-            className={`
-            w-full
-            overflow-hidden 
-            py-12
-            pb-24
-            ${darkMode ? 'border-b border-neutral-900' : ''}
-        `}>
-            <motion.h2
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: -100 }}
-                transition={{ duration: 0.5 }}
-                className="my-20 text-center text-4xl"
-            >
-                Certifications
-            </motion.h2>
+        <section id='certificates' className="pt-[var(--navbar-height)]">
             <div
-                ref={carouselRef}
-                className="flex overflow-x-hidden space-x-4 p-4"
-                style={{ scrollBehavior: 'smooth' }}
-            >
-                {[...CERTIFICATES, ...CERTIFICATES].map((cert, index) => (
-                    <img
-                        key={index}
-                        src={cert.image}
-                        alt={cert.name}
-                        className="h-40 mb-4 cursor-pointer"
-                        onClick={() => openModal(cert)}
-                    />
-                ))}
-            </div>
+                className={`
+                    w-full
+                    overflow-hidden 
+                    py-12
+                    pb-24
+                    ${darkMode ? 'border-b border-neutral-900' : ''}
+                `}>
+                <motion.h2
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="my-20 text-center text-4xl"
+                >
+                    Certifications
+                </motion.h2>
 
-            <div className="flex justify-end">
-                <a href={import.meta.env.VITE_MY_LEARNING_PATH} target='_blank' className=' hover:text-orange-400 hover:underline text-neutral-400 text-sm'>
-                    See more
-                </a>
-            </div>
+                <div
+                    ref={carouselRef}
+                    className="flex overflow-x-hidden space-x-4 p-4"
+                    style={{ scrollBehavior: 'smooth' }}
+                >
+                    {[...CERTIFICATES, ...CERTIFICATES].map((cert, index) => (
+                        <img
+                            key={index}
+                            src={cert.image}
+                            alt={cert.name}
+                            className="h-40 mb-4 cursor-pointer"
+                            onClick={() => openModal(cert)}
+                        />
+                    ))}
+                </div>
 
-            {/* Modal */}
-            <AnimatePresence>
-                {selectedCert && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ scale: 0.95, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="
-                        fixed 
-                        top-0 
-                        left-0 
-                        w-full 
-                        h-full 
-                        flex 
-                        items-center 
-                        justify-center
-                        bg-black bg-opacity-50"
-                        onClick={closeModal}
-                    >
-                        <div
-                            className={`
+                <div className="flex justify-end">
+                    <a href={import.meta.env.VITE_MY_LEARNING_PATH} target='_blank' className=' hover:text-orange-400 hover:underline text-neutral-400 text-sm'>
+                        See more
+                    </a>
+                </div>
+
+                {/* Modal */}
+                <AnimatePresence>
+                    {selectedCert && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+                            onClick={closeModal}
+                        >
+                            <div
+                                className={`
                             p-6 rounded-lg
                             ${darkMode ?
-                                    'bg-neutral-950 bg-opacity-85 text-white'
-                                    :
-                                    'bg-neutral-100 bg-opacity-85 text-black'}
+                                        'bg-neutral-950 bg-opacity-85 text-white'
+                                        :
+                                        'bg-neutral-100 bg-opacity-85 text-black'}
                         `}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <h3 className="text-2xl font-bold mb-4">{selectedCert.name}</h3>
-                            <p>Author: {selectedCert.author}</p>
-                            <p>Year: {selectedCert.year}</p>
-                            <p>Tag: {selectedCert.tag}</p>
-                            <img src={selectedCert.image} alt={selectedCert.name} className="mt-4 lg:h-96 sm:w-auto sm:h-auto" />
-                            {/* Navigation buttons in modal */}
-                            <div className="flex justify-between mt-4">
-                                <button
-                                    onClick={showPrevCert}
-                                    className="p-2 bg-gray-800 text-white rounded-full"
-                                >
-                                    <FaChevronLeft />
-                                </button>
-                                <button
-                                    onClick={showNextCert}
-                                    className="p-2 bg-gray-800 text-white rounded-full"
-                                >
-                                    <FaChevronRight />
-                                </button>
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <h3 className="text-2xl font-bold mb-4">{selectedCert.name}</h3>
+                                <p>Author: {selectedCert.author}</p>
+                                <p>Year: {selectedCert.year}</p>
+                                <p>Tag: {selectedCert.tag}</p>
+                                <img src={selectedCert.image} alt={selectedCert.name} className="mt-4 lg:h-96 sm:w-auto sm:h-auto" />
+                                {/* Navigation buttons in modal */}
+                                <div className="flex justify-between mt-4">
+                                    <button
+                                        onClick={showPrevCert}
+                                        className="p-2 bg-gray-800 text-white rounded-full"
+                                    >
+                                        <FaChevronLeft />
+                                    </button>
+                                    <button
+                                        onClick={showNextCert}
+                                        className="p-2 bg-gray-800 text-white rounded-full"
+                                    >
+                                        <FaChevronRight />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </section>
     );
 };
 

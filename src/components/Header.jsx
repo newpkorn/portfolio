@@ -2,9 +2,9 @@ import { MdNightsStay, MdWbSunny } from "react-icons/md";
 
 const Header = ({ darkMode, setDarkMode }) => {
     return (
-        <header className={`flex justify-end items-center p-5 `}>
+        <header className="fixed top-0 w-full flex justify-end items-center pt-3 pr-2 py-28 lg:p-6 bg-transparent backdrop-blur-md z-50">
             <div
-                className="fixed top-6 cursor-pointer text-2xl"
+                className="cursor-pointer text-2xl"
                 onClick={() => setDarkMode(!darkMode)}
             >
                 {darkMode ?
@@ -18,5 +18,3 @@ const Header = ({ darkMode, setDarkMode }) => {
 }
 
 export default Header;
-
-

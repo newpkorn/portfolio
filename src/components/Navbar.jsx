@@ -6,6 +6,7 @@ import HomeLogoLight from "../assets/HomeLogoLight.png";
 
 const Navbar = ({ darkMode }) => {
     const [isOpenHamberger, setIsOpenHamberger] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
 
     const navBarMenu = ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"];
 
@@ -20,12 +21,38 @@ const Navbar = ({ darkMode }) => {
             }, 10000);
 
             return () => clearTimeout(timer);
-
         }
     }, [isOpenHamberger]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = navBarMenu.map(menu => document.getElementById(menu));
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+            sections.forEach((section) => {
+                if (section && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                    setActiveSection(section.getAttribute('id'));
+                    // console.log('Active section:', section.getAttribute('id')); // Add this line for debugging
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [navBarMenu]);
+
+
     return (
-        <nav className="w-full flex md:flex lg:flex justify-between mt-14 mb-14">
+        <nav className="
+            flex w-5/6 
+            fixed 
+            top-0
+            z-50 
+            justify-between 
+            mt-10
+            mb-14 
+            bg-transparent"
+        >
             {/* Logo */}
             <div className="flex flex-none w-50 items-start">
                 <img
@@ -76,7 +103,7 @@ const Navbar = ({ darkMode }) => {
                     transition={{ duration: 0.3 }}
                 >
                     {navBarMenu.map((nav, index) => (
-                        <li key={index} className='border-b border-#E0E0E0'>
+                        <li key={index} className={`border-b border-#E0E0E0 ${activeSection === nav ? 'font-bold border-b-4 border-orange-500' : ''}`}>
                             <Link
                                 to={nav}
                                 spy={true}
@@ -100,19 +127,17 @@ const Navbar = ({ darkMode }) => {
                             to={nav}
                             spy={true}
                             smooth={true}
-                            offset={-100}
+                            offset={nav === 'certificates' ? -200 : -100}  // Adjust offset for certificates
                             duration={1000}
-                            className='hover:border-b-4 
-                            border-yellow-400
-                            hover:font-bold'
+                            className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
                         >
                             {nav.toUpperCase()}
                         </Link>
                     </li>
                 ))}
             </ul>
-        </nav>
 
+        </nav>
     );
 };
 
