@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 
 const About = ({ darkMode }) => {
     return (
-        <div className={`
+        <div
+            id="about"
+            className={`
                 ps-4
                 ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>

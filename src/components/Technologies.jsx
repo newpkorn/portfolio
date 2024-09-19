@@ -23,7 +23,9 @@ const iconVariants = (duration) => ({
 
 const Technologies = ({ darkMode }) => {
     return (
-        <div className={`
+        <div
+            id="technologies"
+            className={`
                 pb-24
                 ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>

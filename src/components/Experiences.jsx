@@ -7,7 +7,9 @@ const Experinces = ({ darkMode }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className={`
+        <div
+            id="experiences"
+            className={`
             pb-9
             ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
