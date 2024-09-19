@@ -19,6 +19,7 @@ const Hero = ({ darkMode }) => {
         <div className={`
             pb-4 
             lg:mb-35
+            lg:mt-40
             ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
             <div className="flex flex-wrap">

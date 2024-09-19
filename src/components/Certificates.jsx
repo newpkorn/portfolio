@@ -78,7 +78,9 @@ const Certificates = ({ darkMode }) => {
     };
 
     return (
-        <div className={`
+        <div
+            id='certificates'
+            className={`
             w-full
             overflow-hidden 
             py-12
