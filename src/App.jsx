@@ -13,6 +13,16 @@ import BackToTopButton from "./components/ButtonVariants"
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const [menuHeight, setMenuHeight] = useState(0);
+
+  const handleMenuToggle = (isOpen) => {
+    if (isOpen) {
+      // Set the height of the menu when it's open
+      setMenuHeight(300); // Replace with the actual height of your menu
+    } else {
+      setMenuHeight(0);
+    }
+  };
 
   return (
     <>

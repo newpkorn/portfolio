@@ -44,26 +44,26 @@ const Navbar = ({ darkMode }) => {
 
     return (
         <nav className="
-            flex w-5/6 
-            fixed 
-            top-0
-            z-50 
-            justify-between 
-            mt-10
-            mb-14 
-            bg-transparent"
+            lg:fixed top-0
+            lg:w-5/6
+            lg:z-50
+            flex
+            justify-between
+            bg-transparent
+            mt-14
+            mb-14"
         >
             {/* Logo */}
             <div className="flex flex-none w-50 items-start">
-                <img
+                < img
                     src={darkMode ? HomeLogoDark : HomeLogoLight}
                     className="w-[100px]"
                     alt="logo"
                 />
-            </div>
+            </div >
 
             {/* Hamburger menu (mobile) */}
-            <div className="relative flex flex-col">
+            <div div className="relative flex flex-col" >
                 <motion.div
                     className="flex flex-col items-end space-y-1.5 cursor-pointer md:hidden lg:hidden"
                     onClick={toggleMenu}
@@ -117,27 +117,29 @@ const Navbar = ({ darkMode }) => {
                         </li>
                     ))}
                 </motion.ul>
-            </div>
+            </div >
 
             {/* Full menu (desktop) */}
-            <ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer">
-                {navBarMenu.map((nav, index) => (
-                    <li key={index}>
-                        <Link
-                            to={nav}
-                            spy={true}
-                            smooth={true}
-                            offset={nav === 'certificates' ? -200 : -100}  // Adjust offset for certificates
-                            duration={1000}
-                            className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
-                        >
-                            {nav.toUpperCase()}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <ul ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer" >
+                {
+                    navBarMenu.map((nav, index) => (
+                        <li key={index}>
+                            <Link
+                                to={nav}
+                                spy={true}
+                                smooth={true}
+                                offset={nav === 'certificates' ? -200 : -100}  // Adjust offset for certificates
+                                duration={1000}
+                                className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
+                            >
+                                {nav.toUpperCase()}
+                            </Link>
+                        </li>
+                    ))
+                }
+            </ul >
 
-        </nav>
+        </nav >
     );
 };
 

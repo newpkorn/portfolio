@@ -20,10 +20,10 @@ const Hero = ({ darkMode }) => {
             <div
                 className={`
                 pb-4 
-                mt-56
                 lg:mb-35
                 lg:mt-40
-            ${darkMode ? 'border-b border-neutral-900' : ''}
+                transition-all duration-300
+                ${darkMode ? 'border-b border-neutral-900' : ''}
         `}>
                 <div className="flex flex-wrap">
                     <div className="w-full lg:w-1/2">
@@ -84,4 +84,4 @@ const Hero = ({ darkMode }) => {
     )
 }
 
-export default Hero
+export default Hero;
