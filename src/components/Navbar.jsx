@@ -48,6 +48,7 @@ const Navbar = ({ darkMode }) => {
                 top-2
                 z-50
                 w-9/12
+                md:w-11/12
                 lg:w-11/12
                 flex
                 justify-between
@@ -68,7 +69,7 @@ const Navbar = ({ darkMode }) => {
             </div>
 
             {/* Hamburger menu (mobile) */}
-            <div className="relative flex flex-col">
+            <div className="relative flex justify-center flex-col">
                 <motion.div
                     className="flex flex-col items-end space-y-1.5 cursor-pointer md:hidden lg:hidden"
                     onClick={toggleMenu}
