@@ -7,8 +7,9 @@ const About = ({ darkMode }) => {
         <section id='about'>
             <div
                 className={`
-                ps-4
-                ${darkMode ? 'border-b border-neutral-900' : ''}
+                    ps-4
+                    border-b
+                    ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
                 <h2 className="my-20 text-center text-4xl">
                     About

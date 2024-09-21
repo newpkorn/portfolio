@@ -36,7 +36,7 @@ const BackToTopButton = () => {
 
     return (
         <motion.div
-            className="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full cursor-pointer"
+            className="fixed bottom-4 right-4 bg-neutral-800 text-white p-3 rounded-full cursor-pointer"
             variants={buttonVariants}
             initial="hidden"
             animate={isVisible ? 'visible' : 'hidden'}

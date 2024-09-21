@@ -10,8 +10,9 @@ const Experinces = ({ darkMode }) => {
         <section id="experiences">
             <div
                 className={`
-            pb-9
-            ${darkMode ? 'border-b border-neutral-900' : ''}
+                pb-9
+                border-b
+                ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
                 <motion.h2
                     whileInView={{ opacity: 1, y: 0 }}

@@ -85,7 +85,9 @@ const Certificates = ({ darkMode }) => {
                     overflow-hidden 
                     py-12
                     pb-24
-                    ${darkMode ? 'border-b border-neutral-900' : ''}
+                    mb-20
+                    border-b
+                    ${darkMode ? 'border-neutral-900' : 'border-neutral-300 border-t border-neutral-300'}
                 `}>
                 <motion.h2
                     whileInView={{ opacity: 1, y: 0 }}

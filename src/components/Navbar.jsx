@@ -32,7 +32,6 @@ const Navbar = ({ darkMode }) => {
             sections.forEach((section) => {
                 if (section && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
                     setActiveSection(section.getAttribute('id'));
-                    // console.log('Active section:', section.getAttribute('id')); // Add this line for debugging
                 }
             });
         };
@@ -43,27 +42,33 @@ const Navbar = ({ darkMode }) => {
 
 
     return (
-        <nav className="
-            lg:fixed top-0
-            lg:w-5/6
-            lg:z-50
-            flex
-            justify-between
-            bg-transparent
-            mt-14
-            mb-14"
+        <nav
+            className={`
+                sticky
+                top-2
+                z-50
+                w-9/12
+                lg:w-11/12
+                flex
+                justify-between
+                mt-14
+                mb-14
+                ml-auto
+                mr-auto
+                ${isOpenHamberger ? 'bg-transparent backdrop-blur-md' : 'bg-transparent'}
+                ${darkMode ? 'text-white' : ''}`}
         >
             {/* Logo */}
-            <div className="flex flex-none w-50 items-start">
-                < img
+            <div className="flex flex-none items-start">
+                <img
                     src={darkMode ? HomeLogoDark : HomeLogoLight}
-                    className="w-[100px]"
+                    className="w-[70px] md:w-[100px] lg:w-[100px]"
                     alt="logo"
                 />
-            </div >
+            </div>
 
             {/* Hamburger menu (mobile) */}
-            <div div className="relative flex flex-col" >
+            <div className="relative flex flex-col">
                 <motion.div
                     className="flex flex-col items-end space-y-1.5 cursor-pointer md:hidden lg:hidden"
                     onClick={toggleMenu}
@@ -97,7 +102,7 @@ const Navbar = ({ darkMode }) => {
                 </motion.div>
 
                 <motion.ul
-                    className={`flex-col md:hidden items-center space-y-2`}
+                    className={`flex-col md:hidden items-center space-y-2 bg-transparent backdrop-blur-3xl `}
                     initial={{ opacity: 0, height: 0 }}
                     animate={isOpenHamberger ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
@@ -117,29 +122,27 @@ const Navbar = ({ darkMode }) => {
                         </li>
                     ))}
                 </motion.ul>
-            </div >
+            </div>
 
             {/* Full menu (desktop) */}
-            <ul ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer" >
-                {
-                    navBarMenu.map((nav, index) => (
-                        <li key={index}>
-                            <Link
-                                to={nav}
-                                spy={true}
-                                smooth={true}
-                                offset={nav === 'certificates' ? -200 : -100}  // Adjust offset for certificates
-                                duration={1000}
-                                className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
-                            >
-                                {nav.toUpperCase()}
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul >
+            <ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer">
+                {navBarMenu.map((nav, index) => (
+                    <li key={index}>
+                        <Link
+                            to={nav}
+                            spy={true}
+                            smooth={true}
+                            offset={nav === 'certificates' ? -200 : -100}
+                            duration={1000}
+                            className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
+                        >
+                            {nav.toUpperCase()}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
 
-        </nav >
     );
 };
 

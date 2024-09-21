@@ -31,7 +31,7 @@ const Projects = ({ darkMode }) => {
 
     return (
         <section id="projects">
-            <div className={`pb-4 ${darkMode ? 'border border-neutral-900' : ''}`}>
+            <div className={`pb-4 border ${darkMode ? 'border-neutral-900' : 'border-neutral-100'}`}>
                 <motion.h2
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
@@ -106,7 +106,7 @@ const Projects = ({ darkMode }) => {
                                 relative 
                                 p-4 
                                 max-w-3xl 
-                                w-full 
+                                w-auto 
                                 h-auto 
                                 rounded 
                                 ${darkMode ?
@@ -115,11 +115,11 @@ const Projects = ({ darkMode }) => {
                                         'bg-neutral-100 bg-opacity-85 text-black'}`
                                 }
                             >
-                                <div className="flex justify-center items-center h-full">
+                                <div className="flex justify-center items-center h-full ">
                                     <img
                                         src={selectedProject.image}
                                         alt={selectedProject.title}
-                                        className="w-auto h-auto object-contain mx-auto"
+                                        className="w-auto h-auto lg:w-5/6 object-contain mx-auto"
                                     />
                                 </div>
                                 <h2 className="text-center text-2xl mt-4">{selectedProject.title}</h2>
