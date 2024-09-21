@@ -14,9 +14,9 @@ const Contact = ({ darkMode }) => {
             .sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                form.current,
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            )
+                form.current, {
+                publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+            })
             .then(
                 (res) => {
                     console.log('SUCCESS!', res.status, res.text);
