@@ -5,146 +5,165 @@ import HomeLogoDark from "../assets/HomeLogoDark.png";
 import HomeLogoLight from "../assets/HomeLogoLight.png";
 
 const Navbar = ({ darkMode }) => {
-    const [isOpenHamberger, setIsOpenHamberger] = useState(false);
-    const [activeSection, setActiveSection] = useState('');
 
-    const navBarMenu = ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"];
+  const [isOpenHamberger, setIsOpenHamberger] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-    const toggleMenu = () => {
-        setIsOpenHamberger(!isOpenHamberger);
+  const navBarMenu = ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"];
+
+  const toggleMenu = () => {
+    setIsOpenHamberger(!isOpenHamberger);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== 'undefined') {
+        if (!isOpenHamberger && window.scrollY > lastScrollY) {
+          // Hide when scrolling down and hamburger is closed
+          setShowNavbar(false);
+        } else {
+          // Show when scrolling up or hamburger is open
+          setShowNavbar(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
     };
 
-    useEffect(() => {
-        if (isOpenHamberger) {
-            const timer = setTimeout(() => {
-                setIsOpenHamberger(false);
-            }, 10000);
+    window.addEventListener('scroll', handleScroll);
 
-            return () => clearTimeout(timer);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY, isOpenHamberger]); // Add isOpenHamberger to the dependency array
+
+
+  useEffect(() => {
+    if (isOpenHamberger) {
+      const timer = setTimeout(() => {
+        setIsOpenHamberger(false);
+      }, 10000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isOpenHamberger]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navBarMenu.map(menu => document.getElementById(menu));
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+      sections.forEach((section) => {
+        if (section && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+          setActiveSection(section.getAttribute('id'));
         }
-    }, [isOpenHamberger]);
+      });
+    };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const sections = navBarMenu.map(menu => document.getElementById(menu));
-            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [navBarMenu]);
 
-            sections.forEach((section) => {
-                if (section && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
-                    setActiveSection(section.getAttribute('id'));
-                }
-            });
-        };
+  return (
+    <>
+      <nav
+        className={`
+                    sticky top-0 z-50 w-auto my-10
+                    flex justify-between
+                    transition-transform duration-300 ease-in-out
+                    bg-transparent backdrop-blur-md
+                    ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
+                    ${darkMode ? 'text-white' : ''}`}
+      >
+        <div className='container flex justify-between p-5 mx-auto md:p-8 lg:p-8'>
+          {/* Logo */}
+          <div className="flex flex-none items-start">
+            <img
+              src={darkMode ? HomeLogoDark : HomeLogoLight}
+              className="w-[70px] md:w-[100px] lg:w-[100px]"
+              alt="logo"
+            />
+          </div>
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [navBarMenu]);
+          {/* Hamburger menu (mobile) */}
+          <div className="relative flex flex-col">
+            <motion.div
+              className="flex flex-col items-end space-y-1.5 cursor-pointer md:hidden lg:hidden"
+              onClick={toggleMenu}
+              initial={false}
+              animate={isOpenHamberger ? 'open' : 'closed'}
+            >
+              <motion.div
+                className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
+                variants={{
+                  open: { rotate: -45, translateY: 11 },
+                  closed: { rotate: 0, translateY: 0 }
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
+                variants={{
+                  open: { opacity: 0 },
+                  closed: { opacity: 1 }
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
+                variants={{
+                  open: { rotate: 45, translateY: -11 },
+                  closed: { rotate: 0, translateY: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+              />
+            </motion.div>
 
-
-    return (
-        <nav
-            className={`
-                sticky
-                top-2
-                z-50
-                w-9/12
-                md:w-11/12
-                lg:w-11/12
-                flex
-                justify-between
-                mt-14
-                mb-14
-                ml-auto
-                mr-auto
-                ${isOpenHamberger ? 'bg-transparent backdrop-blur-md' : 'bg-transparent'}
-                ${darkMode ? 'text-white' : ''}`}
-        >
-            {/* Logo */}
-            <div className="flex flex-none items-start">
-                <img
-                    src={darkMode ? HomeLogoDark : HomeLogoLight}
-                    className="w-[70px] md:w-[100px] lg:w-[100px]"
-                    alt="logo"
-                />
-            </div>
-
-            {/* Hamburger menu (mobile) */}
-            <div className="relative flex justify-center flex-col">
-                <motion.div
-                    className="flex flex-col items-end space-y-1.5 cursor-pointer md:hidden lg:hidden"
+            <motion.ul
+              className={`flex-col md:hidden items-center space-y-2 bg-transparent backdrop-blur-3xl `}
+              initial={{ opacity: 0, height: 0 }}
+              animate={isOpenHamberger ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navBarMenu.map((nav, index) => (
+                <li key={index} className={`border-b border-#E0E0E0 ${activeSection === nav ? 'font-bold border-b-4 border-orange-500' : ''}`}>
+                  <Link
+                    to={nav}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={1000}
                     onClick={toggleMenu}
-                    initial={false}
-                    animate={isOpenHamberger ? 'open' : 'closed'}
+                  >
+                    {nav.toUpperCase()}
+                  </Link>
+                </li>
+              ))}
+            </motion.ul>
+          </div>
+
+          {/* Full menu (desktop) */}
+          <ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer">
+            {navBarMenu.map((nav, index) => (
+              <li key={index}>
+                <Link
+                  to={nav}
+                  spy={true}
+                  smooth={true}
+                  offset={nav === 'certificates' ? -200 : -100}
+                  duration={1000}
+                  className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
                 >
-                    <motion.div
-                        className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
-                        variants={{
-                            open: { rotate: -45, translateY: 11 },
-                            closed: { rotate: 0, translateY: 0 }
-                        }}
-                        transition={{ duration: 0.3 }}
-                    />
-                    <motion.div
-                        className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
-                        variants={{
-                            open: { opacity: 0 },
-                            closed: { opacity: 1 }
-                        }}
-                        transition={{ duration: 0.3 }}
-                    />
-                    <motion.div
-                        className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
-                        variants={{
-                            open: { rotate: 45, translateY: -11 },
-                            closed: { rotate: 0, translateY: 0 }
-                        }}
-                        transition={{ duration: 0.5 }}
-                    />
-                </motion.div>
-
-                <motion.ul
-                    className={`flex-col md:hidden items-center space-y-2 bg-transparent backdrop-blur-3xl `}
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={isOpenHamberger ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                >
-                    {navBarMenu.map((nav, index) => (
-                        <li key={index} className={`border-b border-#E0E0E0 ${activeSection === nav ? 'font-bold border-b-4 border-orange-500' : ''}`}>
-                            <Link
-                                to={nav}
-                                spy={true}
-                                smooth={true}
-                                offset={-100}
-                                duration={1000}
-                                onClick={toggleMenu}
-                            >
-                                {nav.toUpperCase()}
-                            </Link>
-                        </li>
-                    ))}
-                </motion.ul>
-            </div>
-
-            {/* Full menu (desktop) */}
-            <ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer">
-                {navBarMenu.map((nav, index) => (
-                    <li key={index}>
-                        <Link
-                            to={nav}
-                            spy={true}
-                            smooth={true}
-                            offset={nav === 'certificates' ? -200 : -100}
-                            duration={1000}
-                            className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
-                        >
-                            {nav.toUpperCase()}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-
-    );
+                  {nav.toUpperCase()}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default Navbar;

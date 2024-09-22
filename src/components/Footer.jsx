@@ -15,8 +15,8 @@ const iconVariants = {
 
 const Footer = () => {
     return (
-        <section id="footer">
-            <div className="m-8 p-12 flex items-center justify-center gap-4 text-3xl">
+        <section id="footer" className='p-12'>
+            <div className="flex items-center justify-center gap-4 text-3xl p-10">
                 <motion.a
                     href={import.meta.env.VITE_LINKEDIN_URL}
                     target="_blank"
@@ -44,6 +44,19 @@ const Footer = () => {
                 >
                     <FaInstagram />
                 </motion.a>
+            </div>
+            <div className="text-center text-sm text-gray-500">
+                <p>
+                    &copy; {new Date().getFullYear()} Made with&nbsp;
+                    <a
+                        href="https://material-tailwind.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline">
+                        Material Tailwind
+                    </a>
+                    &nbsp;by newpk. All rights reserved.
+                </p>
             </div>
         </section>
     );
