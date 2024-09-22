@@ -8,6 +8,17 @@
   font-family: "Inter", sans-serif;
 }
 
+/* Hide scrollbar for Safari and other WebKit browsers */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* disappear scrollbar */
+html, body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
 #certificates {
   scroll-margin-top: 100px;
 }
