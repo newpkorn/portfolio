@@ -16,7 +16,7 @@ const iconVariants = {
 const Footer = () => {
   return (
     <section id="footer" className='pt-12 pb-12'>
-      <div className="flex items-center justify-center gap-4 p-12 text-3xl text-black">
+      <div className="flex items-center justify-center gap-4 p-12 text-3xl">
         <motion.a
           href={import.meta.env.VITE_LINKEDIN_URL}
           target="_blank"

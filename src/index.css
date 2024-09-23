@@ -20,10 +20,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-h2 {
-  color: black;
-}
-
 #certificates {
   scroll-margin-top: 100px;
 }

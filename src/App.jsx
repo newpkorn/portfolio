@@ -24,7 +24,7 @@ const App = () => {
           antialiased
           selection:bg-orange-500
           selection:text-white
-          ${darkMode ? 'text-neutral-100' : 'text-gray-500'}`}
+          ${darkMode ? 'text-neutral-100' : ''}`}
         >
           <div className="fixed top-0 -z-10 h-full w-full">
             {darkMode ?

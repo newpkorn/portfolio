@@ -134,7 +134,7 @@ const Navbar = ({ darkMode }) => {
                   spy={true}
                   smooth={true}
                   offset={-100}
-                  duration={1000}
+                  duration={500}
                   onClick={toggleMenu}
                 >
                   {nav.toUpperCase()}
@@ -153,7 +153,7 @@ const Navbar = ({ darkMode }) => {
                 spy={true}
                 smooth={true}
                 offset={nav === 'certificates' ? -200 : -100}
-                duration={1000}
+                duration={100}
                 className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
               >
                 {nav.toUpperCase()}

@@ -31,8 +31,9 @@ const Experinces = ({ darkMode }) => {
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
                 className="w-full lg:w-1/4">
-                <p className={`mb-2 text-sm 
-                                ${darkMode ?
+                <p className={`
+                  mb-2 text-sm 
+                  ${darkMode ?
                     'text-neutral-400' : ''}`}
                 >
                   {exp.year}
@@ -48,8 +49,9 @@ const Experinces = ({ darkMode }) => {
                   {exp.role} -{" "}
                   <span
                     className={`
-                                        text-sm 
-                                        ${darkMode ? 'text-purple-100' : ''}`}
+                                        text-sm
+                                        font-bold
+                                        ${darkMode ? 'text-purple-100' : 'text-neutral-500'}`}
                   >
                     {exp.company}
                   </span>
@@ -59,7 +61,7 @@ const Experinces = ({ darkMode }) => {
                   className={`
                                     lg:text-justify
                                     mb-4 
-                                    ${darkMode ? 'text-neutral-400' : ''}`}
+                                    ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}
                   dangerouslySetInnerHTML={{ __html: exp.description }}
                 >
                 </p>

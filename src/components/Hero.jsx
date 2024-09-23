@@ -35,7 +35,7 @@ const Hero = ({ darkMode }) => {
                 variants={container(0)}
                 initial="hidden"
                 animate="visible"
-                className="pb-16 text-4xl lg:font-thin tracking-tight lg:mt-16 lg:text-6xl sm:font-bold text-neutral-950">
+                className="pb-16 text-4xl lg:font-thin tracking-tight lg:mt-16 lg:text-6xl sm:font-bold">
                 NEW PAKORN
               </motion.h1>
 
@@ -61,7 +61,13 @@ const Hero = ({ darkMode }) => {
                 variants={container(1)}
                 initial="hidden"
                 animate="visible"
-                className="my- max-w-xl py-6 font-light tracking-tighter lg:text-justify">
+                className={`
+                  my- max-w-xl py-6 
+                  font-light 
+                  tracking-tighter 
+                  lg:text-justify
+                  ${darkMode ? '' : 'text-neutral-500'}
+                `}>
                 {HERO_CONTENT}
               </motion.p>
             </div>

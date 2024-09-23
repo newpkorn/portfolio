@@ -26,7 +26,7 @@ const About = ({ darkMode }) => {
                     border-b
                     ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
-        <h2 className="my-20 text-center text-4xl text-black">
+        <h2 className="my-20 text-center text-4xl">
           About
           <span className="text-neutral-500"> Me</span>
         </h2>
@@ -56,7 +56,12 @@ const About = ({ darkMode }) => {
             transition={{ duration: 1 }}
             className="w-full lg:w-1/2 lg:p-8">
             <div className="flex items-center justify-center lg:justify-start">
-              <p className='my-2 max-w-xl py-6 lg:text-justify' dangerouslySetInnerHTML={{ __html: ABOUT_TEXT }}></p>
+              <p className={`
+                  my-2 max-w-xl py-6 lg:text-justify
+                  ${darkMode ? '' : 'text-neutral-500'}
+                `}
+                dangerouslySetInnerHTML={{ __html: ABOUT_TEXT }}>
+              </p>
             </div>
           </motion.div>
         </div>
