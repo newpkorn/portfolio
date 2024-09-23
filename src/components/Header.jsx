@@ -9,7 +9,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             p-4
             flex justify-end items-start 
             z-50 
-        md:h-28 lg:h-28"
+         md:h-28 lg:h-28"
     >
       <div
         className="cursor-pointer text-2xl "
