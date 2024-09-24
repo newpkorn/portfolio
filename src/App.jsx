@@ -20,7 +20,7 @@ const App = () => {
       <div>
         <Navbar darkMode={darkMode} />
         <div className={`
-          overflow-hidden
+          overflow-x-hidden
           antialiased
           selection:bg-orange-500
           selection:text-white

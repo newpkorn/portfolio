@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import myImg from '../assets/myIMG.png';
-import aboutImg from '../assets/about.png';
+import avatarImg from '../assets/about.png';
 import { ABOUT_TEXT } from '../constants';
 import { motion } from 'framer-motion';
 
 const About = ({ darkMode }) => {
-  const [currentImage, setCurrentImage] = useState(myImg);
+  const [currentImage, setCurrentImage] = useState(avatarImg);
   const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsFlipped(prev => !prev);
       setTimeout(() => {
-        setCurrentImage(prevImage => (prevImage === aboutImg ? myImg : aboutImg));
+        setCurrentImage(prevImage => (prevImage === myImg ? avatarImg : myImg));
       }, 500); // swap back the image from half-round. (500ms)
     }, 5000); // change image every 5 seconds
 
@@ -41,7 +41,7 @@ const About = ({ darkMode }) => {
                 className='rounded-xl w-auto h-96 object-cover'
                 src={currentImage}
                 alt="about"
-                animate={{ rotateY: isFlipped ? 180 : 0 }} // turn around by isFlipped
+                animate={{ rotateY: isFlipped ? 0 : 180 }} // turn around by isFlipped
                 transition={{
                   duration: 1,
                   ease: "easeInOut",

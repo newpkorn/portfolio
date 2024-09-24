@@ -21,8 +21,6 @@ const Navbar = ({ darkMode }) => {
     const handleScroll = () => {
       if (typeof window !== 'undefined') {
         if (!isOpenHamberger && window.scrollY > lastScrollY) {
-          console.log("window.scrollY: ", window.scrollY)
-          console.log("lastScrollY: ", lastScrollY)
           // Hide when scrolling down and hamburger is closed
           setShowNavbar(false);
         } else {
@@ -40,7 +38,6 @@ const Navbar = ({ darkMode }) => {
     };
   }, [lastScrollY, isOpenHamberger]); // Add isOpenHamberger to the dependency array
 
-
   useEffect(() => {
     if (isOpenHamberger) {
       const timer = setTimeout(() => {
@@ -55,9 +52,10 @@ const Navbar = ({ darkMode }) => {
     const handleScroll = () => {
       const sections = navBarMenu.map(menu => document.getElementById(menu));
       const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      const offset = 100;
 
       sections.forEach((section) => {
-        if (section && section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+        if (section && section.offsetTop - offset <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
           setActiveSection(section.getAttribute('id'));
         }
       });
@@ -66,6 +64,7 @@ const Navbar = ({ darkMode }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navBarMenu]);
+
 
   return (
     <nav
@@ -127,17 +126,17 @@ const Navbar = ({ darkMode }) => {
             animate={isOpenHamberger ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {navBarMenu.map((nav, index) => (
-              <li key={index} className={`border-b border-#E0E0E0 ${activeSection === nav ? 'font-bold border-b-4 border-orange-500' : ''}`}>
+            {navBarMenu.map((menu, index) => (
+              <li key={index} className={`border-b border-#E0E0E0 ${activeSection === menu ? 'font-bold border-b-4 border-orange-500' : ''}`}>
                 <Link
-                  to={nav}
+                  to={menu}
                   spy={true}
                   smooth={true}
                   offset={-100}
-                  duration={500}
+                  duration={100}
                   onClick={toggleMenu}
                 >
-                  {nav.toUpperCase()}
+                  {menu.toUpperCase()}
                 </Link>
               </li>
             ))}
@@ -146,17 +145,17 @@ const Navbar = ({ darkMode }) => {
 
         {/* Full menu (desktop) */}
         <ul className="hidden md:flex justify-end items-center space-x-3 text-xs cursor-pointer">
-          {navBarMenu.map((nav, index) => (
+          {navBarMenu.map((menu, index) => (
             <li key={index}>
               <Link
-                to={nav}
+                to={menu}
                 spy={true}
                 smooth={true}
-                offset={nav === 'certificates' ? -200 : -100}
+                offset={menu === 'contact' ? 200 : -100}
                 duration={100}
-                className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === nav ? 'border-b-2 border-orange-500' : ''}`}
+                className={`hover:border-b-4 border-orange-500 hover:font-bold ${activeSection === menu ? 'border-b-2 border-orange-500' : ''}`}
               >
-                {nav.toUpperCase()}
+                {menu.toUpperCase()}
               </Link>
             </li>
           ))}
