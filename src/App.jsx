@@ -10,6 +10,7 @@ import Contact from "./components/Contact"
 import Certificates from "./components/Certificates"
 import Footer from "./components/Footer"
 import BackToTopButton from "./components/ButtonVariants"
+import FineMe from "./components/FineMe"
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -75,6 +76,7 @@ const App = () => {
             <Projects darkMode={darkMode} />
             <Certificates darkMode={darkMode} />
             <Contact darkMode={darkMode} />
+            <FineMe />
             <Footer />
             <BackToTopButton />
           </div>
