@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -130,6 +131,10 @@ const Projects = ({ darkMode }) => {
       </div>
     </section>
   );
+};
+
+Projects.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Projects;

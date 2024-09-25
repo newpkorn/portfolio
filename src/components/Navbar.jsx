@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
@@ -164,5 +165,10 @@ const Navbar = ({ darkMode }) => {
     </nav>
   );
 };
+
+Navbar.propTypes = {
+  darkMode: PropTypes.bool.isRequired
+};
+
 
 export default Navbar;

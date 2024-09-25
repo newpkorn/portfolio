@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { MdNightsStay, MdWbSunny } from "react-icons/md";
 
 const Header = ({ darkMode, setDarkMode }) => {
@@ -19,6 +20,11 @@ const Header = ({ darkMode, setDarkMode }) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  setDarkMode: PropTypes.func.isRequired,
 };
 
 export default Header;
