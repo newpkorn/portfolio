@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from 'react';
 import myImg from '../assets/myIMG.png';
 import avatarImg from '../assets/about.png';
@@ -69,5 +70,9 @@ const About = ({ darkMode }) => {
     </section>
   );
 }
+
+About.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default About;

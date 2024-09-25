@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/profile.jpg";
 import { motion } from "framer-motion";
@@ -88,6 +89,10 @@ const Hero = ({ darkMode }) => {
       </div>
     </section>
   )
+}
+
+Hero.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 }
 
 export default Hero;
