@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import HomeLogoDark from "../assets/HomeLogoDark.png";
@@ -12,7 +12,7 @@ const Navbar = ({ darkMode }) => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navBarMenu = ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"];
+  const navBarMenu = useMemo(() => ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"], []);
 
   const toggleMenu = () => {
     setIsOpenHamberger(!isOpenHamberger);
@@ -22,10 +22,8 @@ const Navbar = ({ darkMode }) => {
     const handleScroll = () => {
       if (typeof window !== 'undefined') {
         if (!isOpenHamberger && window.scrollY > lastScrollY) {
-          // Hide when scrolling down and hamburger is closed
           setShowNavbar(false);
         } else {
-          // Show when scrolling up or hamburger is open
           setShowNavbar(true);
         }
         setLastScrollY(window.scrollY);
@@ -37,7 +35,7 @@ const Navbar = ({ darkMode }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY, isOpenHamberger]); // Add isOpenHamberger to the dependency array
+  }, [lastScrollY, isOpenHamberger]);
 
   useEffect(() => {
     if (isOpenHamberger) {
@@ -66,7 +64,6 @@ const Navbar = ({ darkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navBarMenu]);
 
-
   return (
     <nav
       className={`
@@ -79,12 +76,20 @@ const Navbar = ({ darkMode }) => {
     >
       <div className='container flex justify-between p-5 mx-auto md:p-8 lg:p-8'>
         {/* Logo */}
-        <div className="flex flex-none items-start">
-          <img
-            src={darkMode ? HomeLogoDark : HomeLogoLight}
-            className="w-[70px] md:w-[100px] lg:w-[100px]"
-            alt="logo"
-          />
+        <div className="flex flex-none items-start cursor-pointer">
+          <Link
+            to={navBarMenu[0]}
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={100}
+          >
+            <img
+              src={darkMode ? HomeLogoDark : HomeLogoLight}
+              className="w-[70px] md:w-[100px] lg:w-[100px]"
+              alt="logo"
+            />
+          </Link>
         </div>
 
         {/* Hamburger menu (mobile) */}
@@ -169,6 +174,5 @@ const Navbar = ({ darkMode }) => {
 Navbar.propTypes = {
   darkMode: PropTypes.bool.isRequired
 };
-
 
 export default Navbar;
