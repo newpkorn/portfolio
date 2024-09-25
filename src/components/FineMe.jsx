@@ -21,7 +21,7 @@ const FineMe = () => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-4xl">
+          className="text-center text-3xl">
           Find
           <span className="text-neutral-500"> Me</span>
         </motion.h2>
