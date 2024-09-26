@@ -57,7 +57,7 @@ const Contact = ({ darkMode }) => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.5 }}
-          className="my-10 text-4xl text-center font-bold mb-6 pb-5"
+          className="my-10 text-4xl text-center mb-6 pb-5 font-medium"
         >
           Get In Touch
         </motion.h2>
@@ -127,10 +127,10 @@ const Contact = ({ darkMode }) => {
             className="mb-4"
           >
             <label className="block text-sm font-semibold mb-2" htmlFor="from_subject">
-              Subject
+              Your Subject
             </label>
             <input
-              placeholder="Subject"
+              placeholder="Hello, I'd like to discuss about..."
               className="w-full px-3 py-2 text-black border rounded-lg focus:outline-none focus:border-blue-700"
               required
               type="text"

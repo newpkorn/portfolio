@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaJs } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
@@ -8,20 +9,21 @@ import { SiMysql } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
-const iconVariants = (duration) => ({
-  inital: { y: -10 },
-  animate: {
-    y: [10, -10],
-    transition: {
-      duration: duration,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "reverse"
-    }
-  },
-});
-
 const Technologies = ({ darkMode }) => {
+
+  const iconVariants = (duration) => ({
+    inital: { y: -10 },
+    animate: {
+      y: [10, -10],
+      transition: {
+        duration: duration,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "reverse"
+      }
+    },
+  });
+
   return (
     <section id="technologies">
       <div
@@ -34,8 +36,8 @@ const Technologies = ({ darkMode }) => {
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
           transition={{ duration: 1.5 }}
-          className="my-20 text-center text-4xl font-bold">
-          Technologies
+          className="my-20 text-center text-4xl font-medium">
+          TECHNOLOGIES
         </motion.h2>
 
         <motion.div
@@ -119,6 +121,10 @@ const Technologies = ({ darkMode }) => {
       </div>
     </section>
   )
-}
+};
+
+Technologies.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default Technologies;
