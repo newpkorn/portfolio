@@ -79,7 +79,9 @@ const Certificates = ({ darkMode }) => {
   };
 
   return (
-    <section id='certificates' className="pt-[var(--navbar-height)]">
+    <section
+      id='certificates'
+      className="pt-[var(--navbar-height)]">
       <div
         className={`
             w-full
@@ -130,13 +132,13 @@ const Certificates = ({ darkMode }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="
-               fixed 
-               inset-0 
-               z-50 
-               flex 
-               items-center 
-               justify-center 
-               bg-black bg-opacity-50"
+                fixed 
+                inset-0 
+                z-50 
+                flex 
+                items-center 
+                justify-center 
+                bg-black bg-opacity-50"
               onClick={closeModal}
             >
               <div
@@ -145,7 +147,8 @@ const Certificates = ({ darkMode }) => {
                     ${darkMode ?
                     'bg-neutral-950 bg-opacity-85 text-white'
                     :
-                    'bg-neutral-100 bg-opacity-85 text-black'}
+                    'bg-neutral-100 bg-opacity-85 text-black'
+                  }
               `}
                 onClick={(e) => e.stopPropagation()}
               >

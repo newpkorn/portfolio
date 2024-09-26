@@ -11,9 +11,9 @@ const Experinces = ({ darkMode }) => {
     <section id="experiences">
       <div
         className={`
-            pb-9
-            border-b
-            ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
+          pb-9
+          border-b
+          ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,8 +34,7 @@ const Experinces = ({ darkMode }) => {
                 className="w-full lg:w-1/4">
                 <p className={`
                   mb-2 text-sm 
-                  ${darkMode ?
-                    'text-neutral-400' : ''}`}
+                  ${darkMode ? 'text-neutral-400' : ''}`}
                 >
                   {exp.year}
                 </p>
@@ -50,9 +49,9 @@ const Experinces = ({ darkMode }) => {
                   {exp.role} -{" "}
                   <span
                     className={`
-                                        text-sm
-                                        font-bold
-                                        ${darkMode ? 'text-purple-100' : 'text-neutral-500'}`}
+                      text-sm
+                      font-bold
+                      ${darkMode ? 'text-purple-100' : 'text-neutral-500'}`}
                   >
                     {exp.company}
                   </span>
@@ -60,9 +59,9 @@ const Experinces = ({ darkMode }) => {
 
                 <p
                   className={`
-                                    lg:text-justify
-                                    mb-4 
-                                    ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}
+                    lg:text-justify
+                    mb-4 
+                    ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}
                   dangerouslySetInnerHTML={{ __html: exp.description }}
                 >
                 </p>
@@ -71,11 +70,12 @@ const Experinces = ({ darkMode }) => {
                   {exp.skills.map((skill, index) => (
                     <span key={index}
                       className={`
-                                            mr-2 mt-1 
-                                            rounded-md 
-                                            bg-neutral-900 
-                                            px-2 py-1 text-sm 
-                                            font-medium ${darkMode ? 'text-purple-800' : 'text-white'}`}
+                        mr-2 mt-1 
+                        rounded-md 
+                        bg-neutral-900 
+                        px-2 py-1 text-sm 
+                        font-medium 
+                        ${darkMode ? 'text-purple-800' : 'text-white'}`}
                       dangerouslySetInnerHTML={{ __html: skill }}
                     >
                     </span>
@@ -91,24 +91,21 @@ const Experinces = ({ darkMode }) => {
           <button
             onClick={() => setShowModal(true)}
             className={`
-                        cursor-pointer 
-                        flex justify-between 
-                        px-3 
-                        py-2 
-                        rounded-full 
-                        bg-gray-800
-                        ${darkMode ?
-                'hover:bg-gray-900'
-                :
-                'text-white hover:bg-green-600'
-              } 
-                        tracking-wider 
-                        shadow-xl 
-                        hover:scale-105 
-                        duration-500 
-                        hover:ring-1 
-                        font-mono 
-                        w-[150px]`}
+              cursor-pointer 
+              flex justify-between 
+              px-3 
+              py-2 
+              rounded-full 
+              bg-gray-800
+              tracking-wider 
+              shadow-xl 
+              hover:scale-105 
+              duration-500 
+              hover:ring-1 
+              font-mono 
+              w-[150px]
+              ${darkMode ? 'hover:bg-gray-900' : 'text-white hover:bg-green-600'} 
+            `}
           >
             Resume
             <svg
@@ -130,11 +127,32 @@ const Experinces = ({ darkMode }) => {
 
         {/* Full-Screen Modal */}
         {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="w-full h-full bg-white relative">
+          <div
+            className="
+              fixed 
+              inset-0 
+              z-50 
+              flex 
+              items-center 
+              justify-center 
+              bg-black 
+              bg-opacity-50"
+          >
+            <div
+              className="
+                w-full h-full 
+                bg-white 
+                relative">
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 text-black text-2xl p-2 z-50"
+                className="
+                  absolute 
+                  top-4 
+                  right-4 
+                  text-black 
+                  text-2xl 
+                  p-2 
+                  z-50"
               >
                 &times;
               </button>

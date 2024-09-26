@@ -75,13 +75,14 @@ const Projects = ({ darkMode }) => {
                     <span
                       key={index}
                       className={`
-                                        mr-2 
-                                        mb-2
-                                        rounded 
-                                        bg-neutral-900 
-                                        px-2 py-1 text-sm 
-                                        font-medium 
-                                        ${darkMode ? 'text-purple-900' : 'text-white'}`}
+                        mr-2 
+                        mb-2
+                        rounded 
+                        bg-neutral-900 
+                        px-2 py-1 text-sm 
+                        font-medium 
+                        ${darkMode ? 'text-purple-900' : 'text-white'}`
+                      }
                     >
                       {skill}
                     </span>
@@ -99,7 +100,15 @@ const Projects = ({ darkMode }) => {
               animate={{ opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+              className="
+                fixed 
+                inset-0 
+                z-50 
+                flex 
+                items-center 
+                justify-center 
+                bg-black 
+                bg-opacity-50"
             >
               <motion.div
                 ref={modalRef}
@@ -108,17 +117,18 @@ const Projects = ({ darkMode }) => {
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className={`
-                                relative 
-                                p-4 
-                                max-w-3xl 
-                                w-auto 
-                                h-auto 
-                                rounded 
-                                ${darkMode ?
+                  relative 
+                  p-4 
+                  max-w-3xl 
+                  w-auto 
+                  h-auto 
+                  rounded 
+                  ${darkMode ?
                     'bg-neutral-950 bg-opacity-85 text-white'
                     :
-                    'bg-neutral-100 bg-opacity-85 text-black'}`
-                }
+                    'bg-neutral-100 bg-opacity-85 text-black'
+                  }
+                `}
               >
                 <div className="flex justify-center items-center h-full ">
                   <img

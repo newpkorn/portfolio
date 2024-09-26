@@ -28,15 +28,23 @@ const Hero = ({ darkMode }) => {
         `}>
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">
-            <div className="
-                        flex flex-col 
-                        items-center 
-                        lg:items-start">
+            <div
+              className="
+                flex flex-col 
+                items-center 
+                lg:items-start">
               <motion.h1
                 variants={container(0)}
                 initial="hidden"
                 animate="visible"
-                className="pb-16 text-4xl lg:font-thin tracking-tight lg:mt-16 lg:text-6xl sm:font-bold">
+                className="
+                  pb-16 
+                  text-4xl 
+                  lg:font-thin 
+                  tracking-tight 
+                  lg:mt-16 
+                  lg:text-6xl 
+                  sm:font-bold">
                 NEW PAKORN
               </motion.h1>
 
@@ -46,14 +54,15 @@ const Hero = ({ darkMode }) => {
                 animate="visible"
                 drag="x"
                 dragConstraints={{ left: -100, right: 100 }}
-                className="bg-gradient-to-r 
-                                    from-pink-300 
-                                    via-slate-500 
-                                    to-purple-500 
-                                    bg-clip-text 
-                                    text-3xl 
-                                    tracking-tight 
-                                    text-transparent"
+                className="
+                  bg-gradient-to-r 
+                  from-pink-300 
+                  via-slate-500 
+                  to-purple-500 
+                  bg-clip-text 
+                  text-3xl 
+                  tracking-tight 
+                  text-transparent"
               >
                 Fontend Deverloper
               </motion.span>

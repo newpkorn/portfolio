@@ -11,7 +11,7 @@ export const PROJECTS = [
       skills: ["HTML", "CSS", "Bootstrap", "Python", "Flask", "SQLite"],
     },
     {
-      title: "K Online Store",
+      title: "Online Store",
       image: KOnlineShop,
       description:
         "An application built with Node.js, EJS, and MongoDB. It features a CRUD system for managing both products and employees, allowing users to create, read, update, and delete entries for each.",

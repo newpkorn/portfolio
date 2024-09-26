@@ -66,8 +66,9 @@ const Contact = ({ darkMode }) => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className={`flex items-center p-4 mb-4 text-sm rounded-lg 
-                        ${alert.type === 'success'
+            className={
+              `flex items-center p-4 mb-4 text-sm rounded-lg 
+              ${alert.type === 'success'
                 ? 'bg-green-100 text-green-700'
                 : 'bg-red-100 text-red-700'
               }`}
@@ -79,7 +80,7 @@ const Contact = ({ darkMode }) => {
             )}
             {alert.message}
           </motion.div>
-        )}
+        )};
 
         <form ref={form} onSubmit={sendEmail}>
           <motion.div
@@ -88,12 +89,27 @@ const Contact = ({ darkMode }) => {
             transition={{ duration: 1 }}
             className="mb-4"
           >
-            <label className="block text-sm font-semibold mb-2" htmlFor="from_name">
+            <label
+              className="
+                block 
+                text-sm 
+                font-semibold 
+                mb-2"
+              htmlFor="from_name"
+            >
               Your Name
             </label>
             <input
               placeholder="John Doe"
-              className="w-full px-3 py-2 text-black border rounded-lg focus:outline-none focus:border-blue-700"
+              className="
+                w-full 
+                px-3 
+                py-2 
+                text-black 
+                border 
+                rounded-lg 
+                focus:outline-none 
+                focus:border-blue-700"
               required
               type="text"
               id="from_name"
@@ -107,12 +123,27 @@ const Contact = ({ darkMode }) => {
             transition={{ duration: 1 }}
             className="mb-4"
           >
-            <label className="block text-sm font-semibold mb-2" htmlFor="email">
+            <label
+              className="
+                block 
+                text-sm 
+                font-semibold
+                mb-2"
+              htmlFor="email"
+            >
               Your Email
             </label>
             <input
               placeholder="johndoe@example.com"
-              className="w-full px-3 py-2 text-black border rounded-lg focus:outline-none focus:border-blue-700"
+              className="
+                w-full 
+                px-3 
+                py-2 
+                text-black 
+                border 
+                rounded-lg 
+                focus:outline-none 
+                focus:border-blue-700"
               required
               type="email"
               id="email"
@@ -126,12 +157,28 @@ const Contact = ({ darkMode }) => {
             transition={{ duration: 1 }}
             className="mb-4"
           >
-            <label className="block text-sm font-semibold mb-2" htmlFor="from_subject">
+            <label
+              className="
+              block 
+              text-sm 
+              font-semibold 
+              mb-2"
+              htmlFor="from_subject"
+            >
               Your Subject
             </label>
+
             <input
               placeholder="Hello, I'd like to discuss about..."
-              className="w-full px-3 py-2 text-black border rounded-lg focus:outline-none focus:border-blue-700"
+              className="
+                w-full 
+                px-3 
+                py-2 
+                text-black 
+                border 
+                rounded-lg 
+                focus:outline-none 
+                focus:border-blue-700"
               required
               type="text"
               id="from_subject"
@@ -145,13 +192,29 @@ const Contact = ({ darkMode }) => {
             transition={{ duration: 1 }}
             className="mb-4"
           >
-            <label className="block text-sm font-semibold mb-2" htmlFor="message">
+            <label
+              className="
+                block 
+                text-sm 
+                font-semibold 
+                mb-2"
+              htmlFor="message"
+            >
               Your Message
             </label>
+
             <textarea
               rows="4"
               placeholder="Type your message here..."
-              className="w-full px-3 py-2 text-black border rounded-lg focus:outline-none focus:border-blue-700"
+              className="
+                w-full 
+                px-3 
+                py-2 
+                text-black 
+                border 
+                rounded-lg 
+                focus:outline-none 
+                focus:border-blue-700"
               required
               id="message"
               name="message"
@@ -169,41 +232,41 @@ const Contact = ({ darkMode }) => {
                 <button
                   type="submit"
                   className="
-                                relative 
-                                inline-flex 
-                                h-12 
-                                active:scale-95 
-                                transistion 
-                                overflow-hidden 
-                                rounded-lg 
-                                p-[1px] 
-                                focus:outline-none"
+                    relative 
+                    inline-flex 
+                    h-12 
+                    active:scale-95 
+                    transistion 
+                    overflow-hidden 
+                    rounded-lg 
+                    p-[1px] 
+                    focus:outline-none"
                 >
                   <span
                     className="
-                                    absolute 
-                                    inset-[-1000%] 
-                                    animate-[spin_2s_linear_infinite] 
-                                    bg-[conic-gradient(from_90deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%)]"
+                      absolute 
+                      inset-[-1000%] 
+                      animate-[spin_2s_linear_infinite] 
+                      bg-[conic-gradient(from_90deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%)]"
                   >
                   </span>
                   <span
                     className="
-                                    inline-flex 
-                                    h-full 
-                                    w-full 
-                                    cursor-pointer 
-                                    items-center 
-                                    justify-center 
-                                    rounded-lg 
-                                    bg-slate-950 
-                                    px-7 
-                                    text-sm 
-                                    font-medium 
-                                    text-white 
-                                    backdrop-blur-3xl 
-                                    gap-2 
-                                    undefined"
+                      inline-flex 
+                      h-full 
+                      w-full 
+                      cursor-pointer 
+                      items-center 
+                      justify-center 
+                      rounded-lg 
+                      bg-slate-950 
+                      px-7 
+                      text-sm 
+                      font-medium 
+                      text-white 
+                      backdrop-blur-3xl 
+                      gap-2 
+                      undefined"
                   >
                     Contact me
                     <svg
@@ -225,13 +288,25 @@ const Contact = ({ darkMode }) => {
               :
               (
                 <button
-                  className="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#7747FF] hover:bg-white hover:text-[#7747FF] focus:text-[#7747FF] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200"
+                  className="
+                    inline-block 
+                    py-2 
+                    px-6 
+                    rounded-l-xl 
+                    rounded-t-xl 
+                    bg-[#7747FF] 
+                    hover:bg-white 
+                    hover:text-[#7747FF] 
+                    focus:text-[#7747FF] 
+                    focus:bg-gray-200 
+                    text-gray-50 
+                    font-bold 
+                    leading-loose 
+                    transition 
+                    duration-200"
                 >
                   Submit
                 </button>
-
-
-
               )
             }
           </motion.div>
