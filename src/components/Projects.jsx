@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
-import { PROJECTS } from "../constants";
+import { PROJECTS } from "../constants/project";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = ({ darkMode }) => {

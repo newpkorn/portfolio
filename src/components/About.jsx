@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from 'react';
 import myImg from '../assets/myIMG.png';
 import avatarImg from '../assets/about.png';
-import { ABOUT_TEXT } from '../constants';
+import { ABOUT_TEXT } from '../constants/about';
 import { motion } from 'framer-motion';
 
 const About = ({ darkMode }) => {

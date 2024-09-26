@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from 'react';
-import { CERTIFICATES } from "../constants";
+import { CERTIFICATES } from "../constants/certificates";
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -153,11 +153,13 @@ const Certificates = ({ darkMode }) => {
                 <p>Author: {selectedCert.author}</p>
                 <p>Year: {selectedCert.year}</p>
                 <p>Tag: {selectedCert.tag}</p>
-                <img
-                  src={selectedCert.image}
-                  alt={selectedCert.name}
-                  className="mt-4 w-auto h-auto md:h-96 lg:h-96"
-                />
+                <div className="flex justify-center">
+                  <img
+                    src={selectedCert.image}
+                    alt={selectedCert.name}
+                    className="mt-4 w-auto h-auto md:h-96 lg:h-96"
+                  />
+                </div>
                 {/* Navigation buttons in modal */}
                 <div className="flex justify-between mt-4">
                   <button

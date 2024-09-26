@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { HERO_CONTENT } from "../constants";
+import { HERO_CONTENT } from "../constants/hero";
 import profilePic from "../assets/profile.jpg";
 import { motion } from "framer-motion";
 

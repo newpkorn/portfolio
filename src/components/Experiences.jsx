@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import { EXPERIENCES } from "../constants";
+import { EXPERIENCES } from "../constants/experiences";
 import { motion } from 'framer-motion';
 
 const Experinces = ({ darkMode }) => {
