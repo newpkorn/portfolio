@@ -80,7 +80,7 @@ const Contact = ({ darkMode }) => {
             )}
             {alert.message}
           </motion.div>
-        )};
+        )}
 
         <form ref={form} onSubmit={sendEmail}>
           <motion.div
