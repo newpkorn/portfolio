@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -238,6 +239,10 @@ const Contact = ({ darkMode }) => {
       </div>
     </section>
   );
+};
+
+Contact.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Contact;

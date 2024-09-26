@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import { EXPERIENCES } from "../constants";
 import { motion } from 'framer-motion';
@@ -20,7 +21,7 @@ const Experinces = ({ darkMode }) => {
           transition={{ duration: 0.5 }}
           className="my-20 text-center text-4xl font-bold"
         >
-          Experiences
+          EXPERIENCES
         </motion.h2>
 
         <div>
@@ -148,6 +149,10 @@ const Experinces = ({ darkMode }) => {
       </div>
     </section>
   );
+};
+
+Experinces.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Experinces;
