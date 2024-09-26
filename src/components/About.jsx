@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from 'react';
-import myImg from '../assets/myIMG.png';
-import avatarImg from '../assets/about.png';
+import myImg from '../assets/images/myIMG.png';
+import avatarImg from '../assets/images/about.png';
 import { ABOUT_TEXT } from '../constants/about';
 import { motion } from 'framer-motion';
 
@@ -24,8 +24,8 @@ const About = ({ darkMode }) => {
     <section id='about'>
       <div
         className={`
-                    border-b
-                    ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
+          border-b
+          ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
         <h2 className="my-20 text-center text-4xl">
           About

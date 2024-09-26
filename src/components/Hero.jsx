@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { HERO_CONTENT } from "../constants/hero";
-import profilePic from "../assets/profile.jpg";
+import profilePic from "../assets/images/profile.jpg";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
@@ -20,11 +20,11 @@ const Hero = ({ darkMode }) => {
     <section id="home">
       <div
         className={`
-                pb-4 
-                lg:mb-35
-                transition-all duration-300
-                border-b
-                ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
+          pb-24
+          lg:mb-35
+          transition-all duration-300
+          border-b
+          ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">

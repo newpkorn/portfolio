@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import HomeLogoDark from "../assets/HomeLogoDark.png";
-import HomeLogoLight from "../assets/HomeLogoLight.png";
+import HomeLogoDark from "../assets/images/HomeLogoDark.png";
+import HomeLogoLight from "../assets/images/HomeLogoLight.png";
 
 const Navbar = ({ darkMode }) => {
 

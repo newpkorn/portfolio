@@ -28,9 +28,12 @@ const Technologies = ({ darkMode }) => {
     <section id="technologies">
       <div
         className={`
-                pb-24
-                border-b
-                ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
+          flex flex-col
+          items-center
+          my-20
+          pb-24
+          border-b
+          ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
         `}>
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}

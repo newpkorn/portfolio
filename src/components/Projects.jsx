@@ -32,7 +32,11 @@ const Projects = ({ darkMode }) => {
 
   return (
     <section id="projects">
-      <div className={`pb-4 border ${darkMode ? 'border-neutral-900' : 'border-neutral-100'}`}>
+      <div
+        className={`
+          pb-4 border 
+          ${darkMode ? 'border-neutral-900' : 'border-neutral-100'}`}
+      >
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
