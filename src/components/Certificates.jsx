@@ -17,8 +17,8 @@ const Certificates = ({ darkMode }) => {
 
     const scroll = () => {
       if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-        carousel.scrollLeft = 0;
-        // stopScroll()
+        // carousel.scrollLeft = 0;
+        stopScroll()
       } else {
         carousel.scrollLeft += scrollSpeed;
       }
