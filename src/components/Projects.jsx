@@ -68,7 +68,20 @@ const Projects = ({ darkMode }) => {
                 initial={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1 }}
                 className="w-full max-w-xl lg:w-3/4">
-                <h6 className="mb-2 font-semibold">{project.title}</h6>
+                <h6 className="mb-2 font-semibold">
+                  <span
+                    key={index}
+                    className="
+                        mb-2
+                        py-1
+                        rounded
+                        hover:bg-orange-600
+                        hover:text-white
+                        hover:px-2"
+                  >
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.title}</a>
+                  </span>
+                </h6>
                 <p className="mb-4 lg:text-justify text-neutral-400">{project.description}</p>
                 <div className="flex flex-wrap">
                   {project.skills.map((skill, index) => (
