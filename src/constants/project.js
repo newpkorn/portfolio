@@ -8,9 +8,9 @@ export const PROJECTS = [
     title: "Food Delivery",
     image: FoodDelivery,
     description:
-      "The Food Delivery Frontend allows users to add and remove food items from the cart, with automatic price calculation. The website includes a filter feature that lets users sort food items by category. It also has a login page. The project is built using React, React Router Dom, HTML, CSS, and JavaScript.",
-    skills: ["HTML", "CSS", "React", "React Router Dom"],
-    demo: "https://newpk-food-delivery.netlify.app/",
+      "The Food Delivery application is a full-stack project built using the MERN Stack (MongoDB, Express, React, Node.js). allows users to register, log in, browse the menu, add/remove items from the cart, and track orders in real-time. Admins can manage the menu by adding, editing, or deleting items and updating order statuses. The backend handles authentication, data management, and secure password encryption.",
+    skills: ["HTML", "CSS", "React", "React Router Dom", "NodeJS", "Express", "MongoDB"],
+    demo: "https://aroidee.netlify.app/",
   },
     {
       title: "To Do App",

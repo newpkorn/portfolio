@@ -82,7 +82,7 @@ const Projects = ({ darkMode }) => {
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.title}</a>
                   </span>
                 </h6>
-                <p className="mb-4 lg:text-justify text-neutral-400">{project.description}</p>
+                <p className="mb-4 lg:text-justify text-neutral-400" dangerouslySetInnerHTML={{ __html: project.description }}></p>
                 <div className="flex flex-wrap">
                   {project.skills.map((skill, index) => (
                     <span
