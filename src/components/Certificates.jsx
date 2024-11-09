@@ -13,24 +13,31 @@ const Certificates = ({ darkMode }) => {
     if (!carousel) return;
 
     let animationFrameId;
-    let scrollSpeed = 1;
+    const scrollSpeed = 1;
 
     const scroll = () => {
+      // console.log(`Current scrollLeft: ${carousel.scrollLeft}, Scroll Width: ${carousel.scrollWidth}, Client Width: ${carousel.clientWidth}`);
+
       if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-        // carousel.scrollLeft = 0;
-        stopScroll()
+        carousel.scrollLeft = 0;
       } else {
         carousel.scrollLeft += scrollSpeed;
       }
+
       animationFrameId = requestAnimationFrame(scroll);
     };
 
     const startScroll = () => {
-      animationFrameId = requestAnimationFrame(scroll);
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(scroll);
+      }
     };
 
     const stopScroll = () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
     };
 
     startScroll();
@@ -45,7 +52,7 @@ const Certificates = ({ darkMode }) => {
     };
   }, []);
 
-  // Function to open modal
+
   const openModal = (cert) => {
     setSelectedCert(cert);
   };
@@ -104,7 +111,7 @@ const Certificates = ({ darkMode }) => {
         <div
           ref={carouselRef}
           className="flex overflow-x-hidden space-x-4 p-4"
-          style={{ scrollBehavior: 'smooth' }}
+        // style={{ scrollBehavior: 'smooth' }}
         >
           {[...CERTIFICATES, ...CERTIFICATES].map((cert, index) => (
             <img
