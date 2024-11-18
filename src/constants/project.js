@@ -27,7 +27,7 @@ export const PROJECTS = [
     description:
       "A To-Do List Application built using Python Flask and SQLite allows users to manage tasks efficiently. The project involves creating a web app where users can add, edit, update, and delete task lists (cards) and items (checklist) within each card.",
     skills: ["HTML", "CSS", "Bootstrap", "Python", "Flask", "SQLite"],
-    demo: "",
+    demo: "http://3.0.201.84:5000/",
   },
   {
     title: "Online Store",
