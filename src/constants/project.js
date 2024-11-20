@@ -35,7 +35,7 @@ export const PROJECTS = [
     description:
       "An application built with Node.js, EJS, and MongoDB. It features a CRUD system for managing both products and employees, allowing users to create, read, update, and delete entries for each.",
     skills: ["HTML", "CSS", "Bootstrap", "ejs", "NodeJs", "Express", "MongoDB"],
-    demo: "https://online-store-cne0i68pq-newpkorns-projects.vercel.app/",
+    demo: "https://newpk-onlinestore.vercel.app/",
   },
   {
     title: "Portfolio Website",
