@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { useState } from "react";
-import { EXPERIENCES } from "../constants/experiences";
+import { useState } from 'react';
+import { EXPERIENCES } from '../constants/experiences';
 import { motion } from 'framer-motion';
 
 const Experinces = ({ darkMode }) => {
-
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -14,7 +13,8 @@ const Experinces = ({ darkMode }) => {
           pb-9
           border-b
           ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
-        `}>
+        `}
+      >
         <motion.h2
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -100 }}
@@ -31,8 +31,10 @@ const Experinces = ({ darkMode }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}
                 transition={{ duration: 1 }}
-                className="w-full lg:w-1/4">
-                <p className={`
+                className="w-full lg:w-1/4"
+              >
+                <p
+                  className={`
                   mb-2 text-sm 
                   ${darkMode ? 'text-neutral-400' : ''}`}
                 >
@@ -44,9 +46,10 @@ const Experinces = ({ darkMode }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1 }}
-                className="w-full max-w-xl lg:w-3/4">
+                className="w-full max-w-xl lg:w-3/4"
+              >
                 <h6 className="mb-2 font-semibold">
-                  {exp.role} -{" "}
+                  {exp.role} -{' '}
                   <span
                     className={`
                       text-sm
@@ -63,12 +66,12 @@ const Experinces = ({ darkMode }) => {
                     mb-4 
                     ${darkMode ? 'text-neutral-400' : 'text-neutral-500'}`}
                   dangerouslySetInnerHTML={{ __html: exp.description }}
-                >
-                </p>
+                ></p>
 
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:flex">
                   {exp.skills.map((skill, index) => (
-                    <span key={index}
+                    <span
+                      key={index}
                       className={`
                         mr-2 mt-1 
                         rounded-md 
@@ -77,8 +80,7 @@ const Experinces = ({ darkMode }) => {
                         font-medium 
                         ${darkMode ? 'text-purple-800' : 'text-white'}`}
                       dangerouslySetInnerHTML={{ __html: skill }}
-                    >
-                    </span>
+                    ></span>
                   ))}
                 </div>
               </motion.div>
@@ -104,7 +106,9 @@ const Experinces = ({ darkMode }) => {
               hover:ring-1 
               font-mono 
               w-[150px]
-              ${darkMode ? 'hover:bg-gray-900' : 'text-white hover:bg-green-600'} 
+              ${
+                darkMode ? 'hover:bg-gray-900' : 'text-white hover:bg-green-600'
+              } 
             `}
           >
             Resume
@@ -142,7 +146,8 @@ const Experinces = ({ darkMode }) => {
               className="
                 w-full h-full 
                 bg-white 
-                relative">
+                relative"
+            >
               <button
                 onClick={() => setShowModal(false)}
                 className="
@@ -157,7 +162,7 @@ const Experinces = ({ darkMode }) => {
                 &times;
               </button>
               <iframe
-                src="https://drive.google.com/file/d/1TFEB0t863y-8MzVknlpatMHLFyquQSCx/preview"
+                src="https://drive.google.com/file/d/1nVnLLOVPOn2vLxljQxu3bk1MtND1FRqm/preview"
                 className="w-full h-full"
                 allow="autoplay"
               ></iframe>
