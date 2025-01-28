@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
-import { HERO_CONTENT } from "../constants/hero";
-import profilePic from "../assets/images/profile.jpg";
-import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
+import { HERO_CONTENT } from '../constants/hero';
+import profilePic from '../assets/images/profile.jpg';
+import { motion } from 'framer-motion';
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -12,7 +12,7 @@ const container = (delay) => ({
       duration: 0.5,
       delay: delay,
     },
-  }
+  },
 });
 
 const Hero = ({ darkMode }) => {
@@ -25,14 +25,16 @@ const Hero = ({ darkMode }) => {
           transition-all duration-300
           border-b
           ${darkMode ? 'border-neutral-900' : 'border-neutral-300'}
-        `}>
+        `}
+      >
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/2">
             <div
               className="
                 flex flex-col 
                 items-center 
-                lg:items-start">
+                lg:items-start"
+            >
               <motion.h1
                 variants={container(0)}
                 initial="hidden"
@@ -44,7 +46,8 @@ const Hero = ({ darkMode }) => {
                   tracking-tight 
                   lg:mt-16 
                   lg:text-6xl 
-                  sm:font-bold">
+                  sm:font-bold"
+              >
                 NEW PAKORN
               </motion.h1>
 
@@ -64,7 +67,7 @@ const Hero = ({ darkMode }) => {
                   tracking-tight 
                   text-transparent"
               >
-                Fontend Deverloper
+                IT Engineer
               </motion.span>
 
               <motion.p
@@ -77,7 +80,8 @@ const Hero = ({ darkMode }) => {
                   tracking-tighter 
                   lg:text-justify
                   ${darkMode ? '' : 'text-neutral-500'}
-                `}>
+                `}
+              >
                 {HERO_CONTENT}
               </motion.p>
             </div>
@@ -89,7 +93,8 @@ const Hero = ({ darkMode }) => {
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
-                src={profilePic} alt="PK"
+                src={profilePic}
+                alt="PK"
                 className="rounded-2xl"
               />
             </div>
@@ -97,11 +102,11 @@ const Hero = ({ darkMode }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 Hero.propTypes = {
   darkMode: PropTypes.bool.isRequired,
-}
+};
 
 export default Hero;
