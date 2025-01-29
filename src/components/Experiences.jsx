@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { EXPERIENCES } from '../constants/experiences';
+import { FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Experinces = ({ darkMode }) => {
@@ -107,7 +108,9 @@ const Experinces = ({ darkMode }) => {
               font-mono 
               w-[150px]
               ${
-                darkMode ? 'hover:bg-gray-900' : 'text-white hover:bg-green-600'
+                darkMode
+                  ? 'bg-gray-900 text-white hover:bg-orange-500'
+                  : 'bg-gray-800 text-white hover:bg-orange-500'
               } 
             `}
           >
@@ -127,6 +130,32 @@ const Experinces = ({ darkMode }) => {
               ></path>
             </svg>
           </button>
+
+          <a href="mailto:pakorn.soikham@gmail.com">
+            <button
+              className={`
+              flex items-center justify-between
+              px-4 py-2 
+              rounded-full 
+              tracking-wider 
+              shadow-xl 
+              hover:scale-105 
+              duration-500 
+              hover:ring-1 
+              font-mono 
+              w-[160px] 
+              ml-4
+              ${
+                darkMode
+                  ? 'bg-gray-900 text-white hover:bg-orange-500'
+                  : 'bg-gray-800 text-white hover:bg-orange-500'
+              }
+            `}
+            >
+              Hire Me
+              <FaEnvelope className="w-5 h-5 animate-bounce" />
+            </button>
+          </a>
         </div>
 
         {/* Full-Screen Modal */}
