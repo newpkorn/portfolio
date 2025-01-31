@@ -8,7 +8,7 @@ export const EXPERIENCES = [
   },
   {
     year: '2019 - 2022',
-    role: 'Junior Consultant',
+    role: 'Consultant',
     company: 'Atos IT Solutions and Services Limited',
     description: `Job Role: IT Engineer<br />Maintained and supported web applications using technologies such as MS SQL Server, ASP, VB, JavaScript, XML, HTML, and CSS. Additionally, provided support for DWP Client Services (hardware break-fix), Siemens SiPass Integrated (access control system), and PKI certificate management.`,
     skills: ['Javascript', 'HTML', 'CSS ', 'MSSQL SERVER'],
