@@ -2,17 +2,27 @@ import PropTypes from 'prop-types';
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import HomeLogoDark from "../assets/images/HomeLogoDark.png";
-import HomeLogoLight from "../assets/images/HomeLogoLight.png";
+// import HomeLogoDark from '../assets/images/HomeLogoDark.png';
+// import HomeLogoLight from '../assets/images/HomeLogoLight.png';
 
 const Navbar = ({ darkMode }) => {
-
   const [isOpenHamberger, setIsOpenHamberger] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const navBarMenu = useMemo(() => ["home", "about", "technologies", "experiences", "projects", "certificates", "contact"], []);
+  const navBarMenu = useMemo(
+    () => [
+      'home',
+      'about',
+      'technologies',
+      'experiences',
+      'projects',
+      'certificates',
+      'contact',
+    ],
+    []
+  );
 
   const toggleMenu = () => {
     setIsOpenHamberger(!isOpenHamberger);
@@ -49,12 +59,17 @@ const Navbar = ({ darkMode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navBarMenu.map(menu => document.getElementById(menu));
-      const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+      const sections = navBarMenu.map((menu) => document.getElementById(menu));
+      const scrollPos =
+        window.pageYOffset || document.documentElement.scrollTop;
       const offset = 100;
 
       sections.forEach((section) => {
-        if (section && section.offsetTop - offset <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+        if (
+          section &&
+          section.offsetTop - offset <= scrollPos &&
+          section.offsetTop + section.offsetHeight > scrollPos
+        ) {
           setActiveSection(section.getAttribute('id'));
         }
       });
@@ -75,14 +90,15 @@ const Navbar = ({ darkMode }) => {
         ${darkMode ? 'text-white' : ''}`}
     >
       <div
-        className='
+        className="
             container 
             flex 
             justify-between 
             p-5 
             mx-auto 
             md:p-8 
-            lg:p-8'>
+            lg:p-8"
+      >
         {/* Logo */}
 
         <div
@@ -100,8 +116,9 @@ const Navbar = ({ darkMode }) => {
             duration={100}
           >
             <img
-              src={darkMode ? HomeLogoDark : HomeLogoLight}
-              className="w-[70px] md:w-[100px] lg:w-[100px]"
+              // src={darkMode ? HomeLogoDark : HomeLogoLight}
+              className="-mt-6 w-[70px] md:w-[100px] lg:w-[100px]"
+              src="../../public/favicon.ico"
               alt="logo"
             />
           </Link>
@@ -123,10 +140,12 @@ const Navbar = ({ darkMode }) => {
             animate={isOpenHamberger ? 'open' : 'closed'}
           >
             <motion.div
-              className={`w-[35px] h-[5px] ${darkMode ? 'bg-white' : 'bg-black'}`}
+              className={`w-[35px] h-[5px] ${
+                darkMode ? 'bg-white' : 'bg-black'
+              }`}
               variants={{
                 open: { rotate: -45, translateY: 11 },
-                closed: { rotate: 0, translateY: 0 }
+                closed: { rotate: 0, translateY: 0 },
               }}
               transition={{ duration: 0.3 }}
             />
@@ -138,7 +157,7 @@ const Navbar = ({ darkMode }) => {
               `}
               variants={{
                 open: { opacity: 0 },
-                closed: { opacity: 1 }
+                closed: { opacity: 1 },
               }}
               transition={{ duration: 0.3 }}
             />
@@ -150,7 +169,7 @@ const Navbar = ({ darkMode }) => {
               `}
               variants={{
                 open: { rotate: 45, translateY: -11 },
-                closed: { rotate: 0, translateY: 0 }
+                closed: { rotate: 0, translateY: 0 },
               }}
               transition={{ duration: 0.5 }}
             />
@@ -167,10 +186,10 @@ const Navbar = ({ darkMode }) => {
             `}
             initial={{ opacity: 0, height: 0 }}
             animate={
-              isOpenHamberger ?
-                { opacity: 1, height: 'auto' }
-                :
-                { opacity: 0, height: 0 }}
+              isOpenHamberger
+                ? { opacity: 1, height: 'auto' }
+                : { opacity: 0, height: 0 }
+            }
             transition={{ duration: 0.3 }}
           >
             {navBarMenu.map((menu, index) => (
@@ -179,7 +198,11 @@ const Navbar = ({ darkMode }) => {
                 className={`
                   border-b 
                   border-#E0E0E0 
-                  ${activeSection === menu ? 'font-bold border-b-4 border-orange-500' : ''}`}
+                  ${
+                    activeSection === menu
+                      ? 'font-bold border-b-4 border-orange-500'
+                      : ''
+                  }`}
               >
                 <Link
                   to={menu}
@@ -219,7 +242,9 @@ const Navbar = ({ darkMode }) => {
                   hover:border-b-4 
                   border-orange-500 
                   hover:font-bold 
-                  ${activeSection === menu ? 'border-b-2 border-orange-500' : ''}`}
+                  ${
+                    activeSection === menu ? 'border-b-2 border-orange-500' : ''
+                  }`}
               >
                 {menu.toUpperCase()}
               </Link>
@@ -232,7 +257,7 @@ const Navbar = ({ darkMode }) => {
 };
 
 Navbar.propTypes = {
-  darkMode: PropTypes.bool.isRequired
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default Navbar;
