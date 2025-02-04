@@ -168,7 +168,7 @@ Error generating stack: `+o.message+`
             flex 
             flex-none 
             items-start 
-            cursor-pointer`,children:g.jsx(wo,{to:u[0],spy:!0,smooth:!0,offset:-100,duration:100,children:g.jsx("img",{className:"-mt-6 w-[70px] md:w-[100px] lg:w-[100px]",src:"../../public/favicon.ico",alt:"logo"})})}),g.jsxs("div",{className:"relative flex flex-col",children:[g.jsxs(A.div,{className:`
+            cursor-pointer`,children:g.jsx(wo,{to:u[0],spy:!0,smooth:!0,offset:-100,duration:100,children:g.jsx("img",{className:"-mt-6 w-[70px] md:w-[100px] lg:w-[100px]",src:"/favicon.ico",alt:"logo"})})}),g.jsxs("div",{className:"relative flex flex-col",children:[g.jsxs(A.div,{className:`
               flex 
               flex-col 
               items-end 
