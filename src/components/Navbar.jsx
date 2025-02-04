@@ -118,7 +118,7 @@ const Navbar = ({ darkMode }) => {
             <img
               // src={darkMode ? HomeLogoDark : HomeLogoLight}
               className="-mt-6 w-[70px] md:w-[100px] lg:w-[100px]"
-              src="../../public/favicon.ico"
+              src="/favicon.ico"
               alt="logo"
             />
           </Link>
